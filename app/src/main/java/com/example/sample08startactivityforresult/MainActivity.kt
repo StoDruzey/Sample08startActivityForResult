@@ -19,9 +19,5 @@ class MainActivity : AppCompatActivity() {
                     this@MainActivity.startActivity(intent)
                 }
             }
-
-        with(binding) {
-            button
-        }
     }
 }
