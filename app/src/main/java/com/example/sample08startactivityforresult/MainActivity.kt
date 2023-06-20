@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.sample08startactivityforresult.databinding.ActivityMainBinding
+import java.util.UUID
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -13,7 +14,9 @@ class MainActivity : AppCompatActivity() {
             .also { setContentView(it.root) }
             .apply {
                 button.setOnClickListener {
-                    val intent = Intent()
+                    val intent = Intent(this@MainActivity, ActivitySecond::class.java)
+                        .putExtra(ActivitySecond.KEY_TRANSFER, UUID.randomUUID().toString())
+                    this@MainActivity.startActivity(intent)
                 }
             }
 
